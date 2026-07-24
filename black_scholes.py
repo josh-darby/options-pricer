@@ -41,6 +41,7 @@ def call_theta(S, K, T, r, sigma, q=0.0):
     b = -r*K*np.exp(-r*T)*norm.cdf(d2)
     c = q*S*np.exp(-q*T)*norm.cdf(d1)
     return a + b + c
+<<<<<<< HEAD
 
 def put_theta(S, K, T, r, sigma, q=0.0):
     d1, d2 = compute_d1_d2(S, K, T, r, sigma, q)
@@ -109,3 +110,5 @@ for _, row in clean.iterrows():
 clean['implied_vol'] = implied_vols
 print(f"Rows that needed Brent fallback: {fallback_count} / {len(clean)}")
 print(clean[['strike', 'bid', 'ask', 'implied_vol']])
+=======
+>>>>>>> aa913f3a2db30408615f81304e2ad66972e4a697
