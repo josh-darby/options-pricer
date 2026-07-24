@@ -41,7 +41,6 @@ def call_theta(S, K, T, r, sigma, q=0.0):
     b = -r*K*np.exp(-r*T)*norm.cdf(d2)
     c = q*S*np.exp(-q*T)*norm.cdf(d1)
     return a + b + c
-<<<<<<< HEAD
 
 def put_theta(S, K, T, r, sigma, q=0.0):
     d1, d2 = compute_d1_d2(S, K, T, r, sigma, q)
@@ -90,7 +89,7 @@ spot = ticker.history(period="1d")["Close"].iloc[-1]
 expiry_date = pd.Timestamp('2026-08-21')
 T = (expiry_date - pd.Timestamp.today()).days / 365
 r = 0.05
-q = 0.013  # approximate SPY dividend yield
+q = 0.013
 
 implied_vols = []
 fallback_count = 0
@@ -110,5 +109,3 @@ for _, row in clean.iterrows():
 clean['implied_vol'] = implied_vols
 print(f"Rows that needed Brent fallback: {fallback_count} / {len(clean)}")
 print(clean[['strike', 'bid', 'ask', 'implied_vol']])
-=======
->>>>>>> aa913f3a2db30408615f81304e2ad66972e4a697
