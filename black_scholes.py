@@ -38,6 +38,3 @@ def call_theta(S, K, T, r, sigma, q = 0.0):
     b = -r*K*np.exp(-r*T)*norm.cdf(d2)
     c = q*S*np.exp(-q*T)*norm.cdf(d1)
     return a + b + c
-
-print((call_price(100, 100, 1 + 0.05, 0.05, 0.2) - call_price(100, 100, 1 - 0.05, 0.05, 0.2)) / (-2*0.05))
-print(call_theta(100, 100, 1, 0.05, 0.2))
