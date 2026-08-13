@@ -35,7 +35,7 @@ Natural next steps would be to fix κ using an independent estimate and calibrat
 
 ## Usage
 
-\`\`\`python
+'''python
 from vol_surface import build_vol_surface
 from svi import fit_svi_surface
 from heston import calibrate_heston
@@ -43,7 +43,7 @@ from heston import calibrate_heston
 surface = build_vol_surface("SPY", min_T=7/365, spread_threshold=0.15)
 svi_fits = fit_svi_surface(surface)
 heston_fit = calibrate_heston(surface)
-\`\`\`
+'''
 
 ## Validation
 
